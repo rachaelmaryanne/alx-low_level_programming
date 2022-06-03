@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c <filename> 
+cc -c file1.c file4.c  

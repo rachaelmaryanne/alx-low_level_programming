@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc ( space)-c( space) $CFILE
+gcc ( )-c( ) $CFILE

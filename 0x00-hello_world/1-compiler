@@ -1,2 +1,2 @@
 #!/bin/bash
-cc -c file1.c file4.c  
+cc -c file.c -o obj/file1.o

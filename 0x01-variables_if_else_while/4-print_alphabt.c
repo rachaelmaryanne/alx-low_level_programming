@@ -1,12 +1,13 @@
 #include <stdio.h>
 /**
- * main - print alphabet in lower case.
+ * main - Prints the alphabet except the letters q and e.
 (*
  *Return: 0 on success
  */
 int main(void)
 {
-	char a = 'c';
+	char c = 'a';
+
 	while (c <= 'z')
 	{
 		if (c != 'q' && c != 'e')
@@ -15,6 +16,6 @@ int main(void)
 		}
 		c++;
 	}
-	putchar('\n')
+	putchar('\n');
 	return (0);
 }

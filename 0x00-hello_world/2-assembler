@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c file1.c file2.c
+gcc -c $CFILE

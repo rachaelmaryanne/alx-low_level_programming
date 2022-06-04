@@ -1,12 +1,12 @@
 #include <stdio.h>
 /**
- *main - print the alphabets in lower case
+ * main - prints the alphabet in lowercase.
 (*
  *Return: 0 on success
  */
 int main(void)
 {
-	char c = 'a',
+	char c = 'a';
 
 	while (c <= 'z')
 	{
@@ -15,4 +15,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-}	     
+}

@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
- *main - Entry point
+ * main - Entry point
  *
- *Return: Aways 0 (Success)
+ * Return: 0 on success
  */
- int main(void)
+int main(void)
 {
 	int a;
 	long int b;

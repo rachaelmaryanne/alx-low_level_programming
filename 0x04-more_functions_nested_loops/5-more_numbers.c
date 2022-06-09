@@ -5,22 +5,19 @@
  */
 void more_numbers(void);
 {
-	char a, b, c, i;
+	int i;
+	int num = 0;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0 ; i < 10 ; i++)
 	{
-		for (c = 0; c <= 14; c++)
+		while (num < 15)
 		{
-			if (c < 10)
-				b = c;
-			else
-			{
-				a = c / 10;
-				b = c % 10;
-				_putchar('0' + a);
-			}
-			_putchar('0' + b);
+			if (num > 9)
+				_putchar('0' + num / 10);
+			_putchar('0' + num % 10);
+			num++;
 		}
+		num = 0;
 		_putchar('\n');
 	}
 }

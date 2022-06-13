@@ -5,7 +5,8 @@
  * @a: value to be evaluate.
  * @n: value to be evaluate.
  * Return: not.
- */void print_array(int *a, int n)
+ */
+void print_array(int *a, int n)
 {
 	int i;
 

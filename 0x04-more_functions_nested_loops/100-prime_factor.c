@@ -8,16 +8,19 @@
  */
 int main(void)
 {
-	int c;
-	long num = 612852475143;
+	unsigned long int num = 612852475143;
+	unsigned long int prim;
 
-	for (c = (int) sqrt(num); c > 2; c++)
+	prim = 3;
+	while (prim < num / 2)
 	{
-		if (num % c == 0)
+		if ((num % prim) == 0)
 		{
-			printf("%d\n", c);
-			break;
+			if ((prim % 3) == 2)
+				printf(",%lu ", prim);
 		}
-	}
+		prim + = 2;
+	} 
+	putchar('\n');
 	return (0);
 }

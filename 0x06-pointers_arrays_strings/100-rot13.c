@@ -2,40 +2,26 @@
 #include <stdio.h>
 
 /**
- *print_number - prints a number
- *@n: Input number
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
+ * Return: the resulting string
  */
-void print_number(int n)
+char *rot13(char *s)
 {
-	int res, temp, expo;
+	int i, j;
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-
-	expo = 1;
-	/*Check negatives*/
-	if (n >= 0)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		res = n * -1;
+		for (j = 0; a[j] != '\0'; j++)
+		{
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+				break;
+			}
+		}
 	}
-	else
-	{
-		res = n;
-		_putchar('-');
-	}
-
-	/*Initialize exponent variable*/
-	temp = res;
-	while (temp <= -10)
-	{
-		expo *= 10;
-		temp /= 10;
-		printf("expo: %d, temp: %d, orig: %d\n", expo, temp, res);
-	}
-
-	/*Main */
-	while (expo >= 1)
-	{
-		printf("expo: %d, res: %d\n", expo, ((res / expo) % 10) * -1);
-		_putchar(((res / expo) % 10) * -1 + '0');
-		expo /= 10;
-	}
+	return (s);
 }

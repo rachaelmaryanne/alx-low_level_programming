@@ -10,6 +10,7 @@
 int sqtRecursive(int start, int end, int n)
 {
 	long mid;
+
 	if (end >= start)
 	{
 		mid = start + (end - start) / 2;

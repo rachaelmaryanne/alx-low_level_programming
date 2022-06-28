@@ -1,9 +1,9 @@
+#include "main.h"
 #include <stdlib.h>
-#include <main.h>
 /**
- * _strdup - Entry point
- * @str: string we need to duplicate
- * Return: a pointer to the duplicated string or NULL
+ * _strdup - returns a pointer to a newly allocated space with copy of arg
+ * @str: string to copy
+ * Return: pointer to array or null
  */
 char *_strdup(char *str)
 {

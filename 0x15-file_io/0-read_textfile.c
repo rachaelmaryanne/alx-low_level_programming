@@ -2,43 +2,36 @@
 
 /**
  * read_textfile - reads a text file
- * @filename: path of the file to read
- * @letters: number of letters to read and print
- * Return: number of letters readed.
+ * @filename: variable pointer
+ * @letters: size letters
+ * Description: Write a function that reads a text file and prints it
+ * to the POSIX standard output.
+ * Return: the actual number of letters it could read and print, 0 otherwise
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buffer;
-	int count, fd_o, fd_r;
+	ssize_t file, let, w;
+	char *text;
+
+	text = malloc(letters);
+	if (text == NULL)
+		return (0);
 
 	if (filename == NULL)
 		return (0);
 
-	/* Open file and get file descriptor */
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
-		return (0);
+	file = open(filename, O_RDONLY);
 
-	/* read contents of fd */
-	fd_r = read(fd_o, buffer, letters);
-	if (fd_r == 0)
+	if (file == -1)
 	{
-		free(buffer);
-		close(fd_o);
+		free(text);
 		return (0);
 	}
+	let = read(file, text, letters);
 
-	/* write to standard output */
-	count = write(STDOUT_FILENO, buffer, fd_r);
-	if (count == -1)
-	{
-		free(buffer);
-		close(fd_r);
-		close(fd_o);
-		return (0);
-	}
-	close(fd_r);
-	close(fd_o);
+	w = write(STDOUT_FILENO, text, let);
 
-	return (count);
+	close(file);
+
+	return (w);
 }
